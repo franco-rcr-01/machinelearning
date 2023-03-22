@@ -5,3 +5,5 @@
 -- *train.*
 - andare nella cartella data/mnist ed eseguire il comando
 -- cat xa* >mnist_train.csv
+
+# BUON LAVORO!!
