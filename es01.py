@@ -1,10 +1,22 @@
 from sklearn.datasets import load_iris
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
+
+# data, target = load_iris(return_X_y=True)
+# print(data[:5])
+# print(target[:5])
+# sys.exit(0)
+
 
 iris = load_iris()
 print(iris.data[iris.target==1][:5])
 print(iris.data[iris.target==1, 0][:5])
+# print(iris.feature_names)
+# print(iris.target_names)
+
+# sys.exit(0)
+
 
 print(iris["target_names"])
 print(iris.target_names)
@@ -30,4 +42,6 @@ for x_index in range(4):
 
     ax.set_xlabel(iris.feature_names[x_index])
     ax.legend(loc='upper right')
-    plt.show()
+    plt.show(block=False)
+
+plt.show()

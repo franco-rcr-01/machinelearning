@@ -25,8 +25,7 @@ y = dataset.iloc[:, 4].values
 #Il metodo di splitting
 from sklearn.model_selection import train_test_split
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)  
-
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
 
 #preprocessing e standardizzazione
 from sklearn.preprocessing import StandardScaler  
@@ -49,7 +48,7 @@ from sklearn.neighbors import KNeighborsClassifier
 # classifier = KNeighborsClassifier(n_neighbors=5, algorithm="ball_tree")
 # classifier = KNeighborsClassifier(n_neighbors=5, algorithm="kd_tree")
 # classifier = KNeighborsClassifier(n_neighbors=5, algorithm="brute")
-classifier = KNeighborsClassifier(n_neighbors=5, algorithm="auto")
+classifier = KNeighborsClassifier(n_neighbors=1, algorithm="auto")
 classifier.fit(X_train, y_train)
 
 #Predizioni e valutazione della qualità
@@ -66,7 +65,8 @@ from sklearn.metrics import classification_report, confusion_matrix
 print(confusion_matrix(y_test, y_pred))
 print(classification_report(y_test, y_pred))
 
-
+import sys
+sys.exit(0)
 
 #Valutazione del valore ottimale per K
 error = []
