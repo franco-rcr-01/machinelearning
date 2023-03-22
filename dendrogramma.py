@@ -1,4 +1,5 @@
 """
+
 Un dendrogramma è un diagramma a forma di albero che viene utilizzato per 
 rappresentare graficamente la gerarchia di una serie di oggetti o gruppi di oggetti.
 In un dendrogramma, le foglie dell'albero rappresentano gli oggetti (ad esempio, 
