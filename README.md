@@ -1,1 +1,1 @@
-# Esempi dpython machine learning
+# Esempi python machine learning
