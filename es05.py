@@ -110,8 +110,8 @@ class NeuralNetwork:
 
 simple_network = NeuralNetwork(no_of_in_nodes=2, 
                                no_of_out_nodes=1, 
-                               no_of_hidden_nodes=4,
-                               learning_rate=0.2)
+                               no_of_hidden_nodes=16,
+                               learning_rate=0.3)
 
 
 # """
@@ -122,50 +122,70 @@ simple_network = NeuralNetwork(no_of_in_nodes=2,
 # 1   xor   1 = 0
 # """
 
-# for i in range(0, 10000):
-#     simple_network.train([(0, 0)], np.array([(0)]))
-#     simple_network.train([(0, 1)], np.array([(1)]))
-#     simple_network.train([(1, 0)], np.array([(1)]))
-#     simple_network.train([(1, 1)], np.array([(0)]))
+for i in range(0, 100000):
+    simple_network.train([(0, 0)], np.array([(0)]))
+    simple_network.train([(0, 1)], np.array([(1)]))
+    simple_network.train([(1, 0)], np.array([(1)]))
+    simple_network.train([(1, 1)], np.array([(0)]))
 
 
-# print(simple_network.run([(0, 0)]))
-# print(simple_network.run([(0, 1)]))
-# print(simple_network.run([(1, 0)]))
-# print(simple_network.run([(1, 1)]))
+print("0? ", simple_network.run([(0, 0)]))
+print("1? ", simple_network.run([(0, 1)]))
+print("1? ", simple_network.run([(1, 0)]))
+print("0? ", simple_network.run([(1, 1)]))
 
 ##################
 #La prova del calcolo della somma di due digit (da 0 a 3)
 #input es: 3+3 => 2 bit + 2bit = 4 nodi
 #output 3+3=6 max 0> 4 bit
 
-simple_network = NeuralNetwork(no_of_in_nodes=4, 
-                               no_of_out_nodes=3, 
-                               no_of_hidden_nodes=16,
-                               learning_rate=0.3)
-for i in range(0, 100000):
-    simple_network.train([(0, 0, 0, 0)], np.array([(0, 0, 0)]))
-    simple_network.train([(0, 0, 0, 1)], np.array([(0, 0, 1)]))
-    simple_network.train([(0, 0, 1, 0)], np.array([(0, 1, 0)]))
-    simple_network.train([(0, 0, 1, 1)], np.array([(0, 1, 1)]))
-    # simple_network.train([(0, 1, 0, 0)], np.array([(0, 0, 1)]))
-    simple_network.train([(0, 1, 0, 1)], np.array([(0, 1, 0)]))
-    simple_network.train([(0, 1, 1, 0)], np.array([(0, 1, 1)]))
-    # simple_network.train([(0, 1, 1, 1)], np.array([(1, 0, 0)]))
-    simple_network.train([(1, 0, 0, 0)], np.array([(0, 1, 0)]))
-    simple_network.train([(1, 0, 0, 1)], np.array([(0, 1, 1)]))
-    simple_network.train([(1, 0, 1, 0)], np.array([(1, 0, 0)]))
-    simple_network.train([(1, 0, 1, 1)], np.array([(1, 0, 1)]))
-    # simple_network.train([(1, 1, 0, 0)], np.array([(0, 1, 1)]))
-    simple_network.train([(1, 1, 0, 1)], np.array([(1, 0, 0)]))
-    simple_network.train([(1, 1, 1, 0)], np.array([(1, 0, 1)]))
-    simple_network.train([(1, 1, 1, 1)], np.array([(1, 1, 0)]))
+# simple_network = NeuralNetwork(no_of_in_nodes=4, 
+#                                no_of_out_nodes=3, 
+#                                no_of_hidden_nodes=16,
+#                                learning_rate=0.3)
+# for i in range(0, 100000):
+#     simple_network.train([(0, 0, 0, 0)], np.array([(0, 0, 0)]))
+#     simple_network.train([(0, 0, 0, 1)], np.array([(0, 0, 1)]))
+#     simple_network.train([(0, 0, 1, 0)], np.array([(0, 1, 0)]))
+#     simple_network.train([(0, 0, 1, 1)], np.array([(0, 1, 1)]))
+#     # simple_network.train([(0, 1, 0, 0)], np.array([(0, 0, 1)]))
+#     simple_network.train([(0, 1, 0, 1)], np.array([(0, 1, 0)]))
+#     simple_network.train([(0, 1, 1, 0)], np.array([(0, 1, 1)]))
+#     # simple_network.train([(0, 1, 1, 1)], np.array([(1, 0, 0)]))
+#     simple_network.train([(1, 0, 0, 0)], np.array([(0, 1, 0)]))
+#     simple_network.train([(1, 0, 0, 1)], np.array([(0, 1, 1)]))
+#     simple_network.train([(1, 0, 1, 0)], np.array([(1, 0, 0)]))
+#     simple_network.train([(1, 0, 1, 1)], np.array([(1, 0, 1)]))
+#     # simple_network.train([(1, 1, 0, 0)], np.array([(0, 1, 1)]))
+#     simple_network.train([(1, 1, 0, 1)], np.array([(1, 0, 0)]))
+#     simple_network.train([(1, 1, 1, 0)], np.array([(1, 0, 1)]))
+#     simple_network.train([(1, 1, 1, 1)], np.array([(1, 1, 0)]))
 
-# print(simple_network.run([(0, 1, 1, 0)]))
-# print(simple_network.run([(1, 0, 0, 1)]))
-# print(simple_network.run([(1, 0, 1, 1)]))
-# print(simple_network.run([(0, 0, 0, 1)]))
+# # print(simple_network.run([(0, 1, 1, 0)]))
+# # print(simple_network.run([(1, 0, 0, 1)]))
+# # print(simple_network.run([(1, 0, 1, 1)]))
+# # print(simple_network.run([(0, 0, 0, 1)]))
 
-print(simple_network.run([(0, 1, 0, 0)]))
-print(simple_network.run([(0, 1, 1, 1)]))
-print(simple_network.run([(1, 1, 0, 0)]))
+# print(simple_network.run([(0, 1, 0, 0)]))
+# print(simple_network.run([(0, 1, 1, 1)]))
+# print(simple_network.run([(1, 1, 0, 0)]))
+
+
+#Se volessi applicare la mia ANN (artificial neural network) al problema delle IRIS
+#cosa dovrei fare?
+#
+# 1) definizione dell'input
+# 2) definizione dell'output
+# non mi serve altro poichè non mi servono strategie particolari, ci pensa la ANN
+# a definire un modello
+# iris, cosa era l'input?
+# erano 4 valori (sepal len, sepal wid, peta len, petal wid)
+# come posso convertire 4 valori in un vettore di bit (input della ANN)
+# Inoltre, come posso convertire l'output (le classi) della iris in un vettore di bit?
+# Iris-Setosa, Iris-Versicolour, Iris-Virginica => un vettore di tre bit
+# 100 setosa
+# 010 versicolor
+# 001 virginica
+# per l'input potrei convertire in millimetri e quindi ottenere
+# 4 numeri da 0 a 255, da 0 a 25 cm
+# e quindi l'input è un vettore di 4*8 = 32 bit

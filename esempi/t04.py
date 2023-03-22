@@ -13,7 +13,15 @@ svm = SVC(kernel='linear')
 svm.fit(iris.data, iris.target)
 
 # effettua una predizione su un nuovo campione
-new_sample = [[5.0, 3.6, 1.3, 0.25]]
-predicted_class = svm.predict(new_sample)
+for i in range(150):
+    print("Classe predetta({}):{}".format(iris.target[i], svm.predict([iris.data[i]])))
 
-print("Classe predetta:", predicted_class)
+# # predicted_labels = list(map( lambda x : iris.target[x], predicted_labels))
+
+# print("Etichette predette:", predicted_class)
+# print("Etichette del set :", iris.target)
+
+# from sklearn.metrics import classification_report, confusion_matrix  
+
+# print(confusion_matrix(iris.target, predicted_class))
+# # print(classification_report(iris.target, predicted_labels))
