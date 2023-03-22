@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+
 from scipy.stats import truncnorm
 
 def truncated_normal(mean=0, sd=1, low=0, upp=10):
